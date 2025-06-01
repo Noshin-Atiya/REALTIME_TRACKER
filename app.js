@@ -5,7 +5,8 @@ const http = require("http");
 const socketio = require("socket.io");
 const server = http.createServer(app);
 const io = socketio(server);
-app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static(path.join(__dirname,"public")));
 
 io.on("connection",function(socket){
